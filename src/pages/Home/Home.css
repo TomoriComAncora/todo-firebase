@@ -1,0 +1,48 @@
+.home-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+}
+
+.home-container h1{
+    font-size: 2rem;
+    margin-bottom: .5rem;
+}
+
+.home-container span{
+    margin-bottom: 1rem;
+}
+
+.login{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 37.5rem;
+}
+
+.login input, .login button{
+    border: none;
+    height: 2rem;
+    border-radius: .2rem;
+}
+
+.login input{
+    margin-bottom: .7rem;
+    padding: 0 .5rem;
+}
+
+.login button{
+    background-color: #3366ff;
+    color: #fff;
+    font-size: 1rem;
+}
+
+.link-cadastrar{
+    color: #b4b8bb;
+    margin: .8rem 0;
+    font-size: .8rem;
+    text-decoration: none;
+}
