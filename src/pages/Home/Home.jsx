@@ -1,17 +1,26 @@
 import React from "react";
 import { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { auth } from "../../firebaseConnection";
+import { signInWithEmailAndPassword } from "firebase/auth";
 import "./Home.css";
 
 function Home() {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
 
-  const handleSubmit = (e) => {
+  const navigate = useNavigate();
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    7;
     if (email !== "" && senha !== "") {
-      alert("teste");
+      await signInWithEmailAndPassword(auth, email, senha)
+        .then(() => {
+          navigate("/admin", { replace: true });
+        })
+        .catch(() => {
+          console.log("Não foi possivel fazer o login");
+        });
     } else {
       alert("Preencha todos os campos");
     }
